@@ -1,0 +1,15 @@
+Source: bootimgfs
+Section: otherosfs
+Priority: extra
+Maintainer: Dmitry Osipenko <digetx@gmail.com>
+Build-Depends: debhelper (>= 8.0.0), autotools-dev, libfuse-dev, libssl-dev
+Standards-Version: 3.9.3
+Homepage: https://github.com/digetx/bootimgfs
+Vcs-Git: https://github.com/digetx/bootimgfs.git
+Vcs-Browser: https://github.com/digetx/bootimgfs
+
+Package: bootimgfs
+Architecture: any
+Depends: libfuse2 (>= 2.6.0)
+Description: Android bootimg FUSE
+ BOOTIMGFS is FUSE (File System in User Space) that allows to access and modify files and parameters of android bootimg file.

@@ -1,0 +1,5 @@
+bootimgfs (1.0.0-1) experimental; urgency=low
+
+  * Initial release
+
+ -- Dmitry Osipenko <digetx@gmail.com>  Tue, 15 Jul 2014 21:37:36 +0400

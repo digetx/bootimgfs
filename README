@@ -1,0 +1,40 @@
+BOOTIMGFS
+
+BOOTIMGFS is FUSE (File System in User Space) that allows to access and modify
+files and parameters of android bootimg file.
+
+Building requirements:
+----------------------
+* GCC
+* Autotools
+* pkg-config
+* FUSE-devel (>=2.6.x)
+* OpenSSL-devel (>=0.9.8)
+
+Note:
+-----
+OpenSSL is used for sha1 checksum calculation, it is optional and enabled by
+default. Without OpenSSL checksum will be zeroed, this could be unsupported by
+bootloader.
+
+Files structure:
+----------------
+/id                - read-only bootimg checksum (hex string number)
+/cmdline           - kernel boot command line (string)
+/kernel_tags_base  - arch tags memory address (hex string number)
+/page_size         - bootimg files aligment (dec string number)
+/product_name      - product name (string)
+/ramdisk.gz        - comressed archive (binary file)
+/ramdisk_base      - memory address (hex string number)
+/zImage            - kernel image (binary file)
+/kernel_base       - memory address (hex string number)
+/second_stage      - optional second stage loader image (binary file)
+/second_stage_base - optional memory address (hex string number)
+
+Usage examples:
+---------------
+Mount:
+	mount -t bootimgfs /dev/block/mmcblk0p7 /boot
+
+Umount:
+	umount /boot
