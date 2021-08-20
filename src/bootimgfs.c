@@ -579,7 +579,7 @@ int main(int argc, char *argv[])
 	char *mnt_path = argv[2];
 	char *mnt_dev = argv[1];
 
-	if (argc != 2 || bootimg_open(&bif, mnt_dev, 0))
+	if (argc != 3 || bootimg_open(&bif, mnt_dev, 0))
 		return 1;
 
 	assert(fuse_opt_add_arg(&fargs, argv[0]) == 0);
